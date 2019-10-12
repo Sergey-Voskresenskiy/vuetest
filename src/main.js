@@ -1,4 +1,4 @@
-import "reset-css";
+import "reset-css"; //TODO: include modern reset
 import Vue from "vue";
 import App from "./App.vue";
 

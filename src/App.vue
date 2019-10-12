@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <h1>test</h1>
+    <h1>{{ title }}</h1>
+    <h2> {{ fullTime}} </h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
+  data: () => {
+    return {
+      title: "test",
+      fullTime: ""
+    };
+  },
+  mounted() {
+    const date = new Date();
+    this.fullTime = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+  }
 };
 </script>
 <style lang="stylus">
