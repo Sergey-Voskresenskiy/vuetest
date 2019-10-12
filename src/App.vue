@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>{{ title }}</h1>
-    <h2> {{ fullTime}} </h2>
+    <h2>{{ fullTime }}</h2>
   </div>
 </template>
 
