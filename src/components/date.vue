@@ -1,24 +1,34 @@
 <template>
   <div class="date">
-    <h3 @click="updateDate" class="fullTime">{{ fullTime }}</h3>
+    <h3 @click="updateDate" class="fullTime">{{ getFullTime }}</h3>
     <h4>{{ title }}</h4>
   </div>
 </template>
 
 <script>
-const date = new Date() //! computed
 export default {
   name: 'Date',
   data: () => {
     return {
       title: 'test',
-      fullTime: `${date.toLocaleTimeString()} | ${date.toLocaleDateString()}`
+      time: `${new Date().toLocaleTimeString()}`,
+      date: `${new Date().toLocaleDateString()}`
+    }
+  },
+  computed: {
+    getFullTime: {
+      get: function() {
+        return `${this.time} - ${this.date}`
+      },
+      set: function() {
+        this.time = `${new Date().toLocaleTimeString()}`
+        this.date = `${new Date().toLocaleDateString()}`
+      }
     }
   },
   methods: {
     updateDate(e) {
-      const date = new Date()
-      this.fullTime = `${date.toLocaleTimeString()} | ${date.toLocaleDateString()}`
+      this.getFullTime = `${this.time} - ${this.date}`
     }
   }
 }

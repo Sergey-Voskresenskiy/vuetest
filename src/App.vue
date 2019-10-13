@@ -6,6 +6,11 @@
         <Date />
       </div>
       <hr />
+
+      <div class="input">
+        <input type="text" v-model.trim="input" placeholder="v-model" />
+        <p>{{ input }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -18,7 +23,8 @@ export default {
   name: 'app',
   data: () => {
     return {
-      title: 'test'
+      title: 'test',
+      input: ''
     }
   },
   components: {
@@ -36,5 +42,22 @@ export default {
   justify-content space-evenly
   align-items center
   flex-wrap wrap
+
+.input
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+  input
+    background rgba(cadetblue,.25)
+    color #2c3e50
+    height 40px
+    border none
+    text-indent 20px
+    font-weight 700
+    margin-bottom 10px
+    &::placeholder
+      color rgba(cadetblue,.5)
+      font-style italic
 
 </style>
