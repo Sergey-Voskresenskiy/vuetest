@@ -3,10 +3,7 @@
     <div class="container">
       <div class="info">
         <Weather />
-        <div class="date">
-          <h3>{{ fullTime }}</h3>
-          <h4>{{ title }}</h4>
-        </div>
+        <Date />
       </div>
       <hr />
     </div>
@@ -15,6 +12,8 @@
 
 <script>
 import Weather from './components/weather'
+import Date from './components/date'
+
 export default {
   name: 'app',
   data: () => {
@@ -23,15 +22,8 @@ export default {
     }
   },
   components: {
-    Weather
-  },
-  created() {
-    const date = new Date()
-    this.fullTime = `${date.toLocaleTimeString()} | ${date.toLocaleDateString()}`
-
-    // const w = fetch("http://wttr.in/?format=j1", { mode: "no-cors" })
-    //   .then(r => r.json())
-    //   .then(data => console.log(data));
+    Weather,
+    Date
   }
 }
 </script>
