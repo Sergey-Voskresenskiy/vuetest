@@ -23,7 +23,6 @@ export default {
   name: 'app',
   data: () => {
     return {
-      title: 'test',
       input: ''
     }
   },

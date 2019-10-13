@@ -1,7 +1,6 @@
 <template>
   <div class="date">
     <h3 @click="updateDate" class="fullTime">{{ getFullTime }}</h3>
-    <h4>{{ title }}</h4>
   </div>
 </template>
 
@@ -10,7 +9,6 @@ export default {
   name: 'Date',
   data: () => {
     return {
-      title: 'test',
       time: `${new Date().toLocaleTimeString()}`,
       date: `${new Date().toLocaleDateString()}`
     }
@@ -34,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   .fullTime
     cursor pointer
     transition color .5s ease
