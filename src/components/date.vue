@@ -6,7 +6,7 @@
 </template>
 
 <script>
-const date = new Date() //! ну это пиздец коненчо, но в computed я занести это не смог
+const date = new Date() //! computed
 export default {
   name: 'Date',
   data: () => {

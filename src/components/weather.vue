@@ -43,7 +43,7 @@ export default {
     }
   },
   created() {
-    // TODO: разобратся с .env
+    // TODO: .env
     const API_KEY = 'c09050b015aa45f0f162c94a16623214'
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?id=706483&APPID=${API_KEY}&units=metric&lang=ru`
