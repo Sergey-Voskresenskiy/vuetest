@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>{{ title }}</h1>
     <div class="container">
       <div class="info">
         <Weather />
@@ -12,7 +13,7 @@
           <input type="text" v-model.trim="input" placeholder="v-model" />
           <p>{{ input }}</p>
         </div>
-        <Button name="button" />
+        <Button @change="chengeTitle" />
       </div>
     </div>
   </div>
@@ -27,13 +28,19 @@ export default {
   name: 'app',
   data: () => {
     return {
-      input: ''
+      input: '',
+      title: 'vue test'
     }
   },
   components: {
     Weather,
     Date,
     Button
+  },
+  methods: {
+    chengeTitle: function() {
+      this.title = 'button with $emit("change") changes this title'
+    }
   }
 }
 </script>

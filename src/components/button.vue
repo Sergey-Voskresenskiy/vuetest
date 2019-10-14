@@ -1,17 +1,27 @@
 <template>
-  <a href="#" class="btn">
+  <a href="#" @click="change()" class="btn">
     <div class="btn__line btn__line-top"></div>
     <div class="btn__line btn__line-right"></div>
     <div class="btn__line btn__line-bottom"></div>
     <div class="btn__line btn__line-left"></div>
-    {{name}}
+    {{ name }}
   </a>
 </template>
 
 <script>
 export default {
   name: 'btn',
-  props: ['name']
+  props: {
+    name: {
+      type: String,
+      default: 'button'
+    }
+  },
+  methods: {
+    change: function() {
+      this.$emit('change')
+    }
+  }
 }
 </script>
 
@@ -29,10 +39,10 @@ export default {
   overflow hidden
   transition all .5s linear
   &:hover
-    transition-delay .7s
+    transition-delay .4s
     color #fff
     background cadetblue
-    box-shadow 0 0 10px cadetblue, 0 0 40px cadetblue, 0 0 80px cadetblue
+    box-shadow 0 0 20px cadetblue, 0 0 40px cadetblue, 0 0 80px cadetblue
     .btn__line-top
       left 100%
       transition 1s
