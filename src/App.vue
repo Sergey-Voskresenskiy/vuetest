@@ -8,8 +8,11 @@
       <hr />
 
       <div class="input">
-        <input type="text" v-model.trim="input" placeholder="v-model" />
-        <p>{{ input }}</p>
+        <div class="div">
+          <input type="text" v-model.trim="input" placeholder="v-model" />
+          <p>{{ input }}</p>
+        </div>
+        <Button name="button" />
       </div>
     </div>
   </div>
@@ -18,6 +21,7 @@
 <script>
 import Weather from './components/weather'
 import Date from './components/date'
+import Button from './components/button'
 
 export default {
   name: 'app',
@@ -28,7 +32,8 @@ export default {
   },
   components: {
     Weather,
-    Date
+    Date,
+    Button
   }
 }
 </script>
@@ -44,9 +49,9 @@ export default {
 
 .input
   display flex
-  justify-content center
-  align-items center
-  flex-direction column
+  justify-content space-evenly
+  align-items baseline
+  flex-wrap wrap
   input
     background rgba(cadetblue,.25)
     color #2c3e50
