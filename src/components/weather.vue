@@ -42,24 +42,29 @@ export default {
       weatherDescription: ''
     }
   },
-  created() {
-    // TODO: .env
-    const API_KEY = 'c09050b015aa45f0f162c94a16623214'
-    fetch(
-      `http://api.openweathermap.org/data/2.5/weather?id=706483&APPID=${API_KEY}&units=metric&lang=ru`
-    )
-      .then(r => r.json())
-      // .then(data => console.log(data));
-      .then(data => {
-        this.city = `${data.name}`
-        this.country = `${data.sys.country}`
-        this.temp = `${data.main.temp} °`
-        this.pressure = `${data.main.pressure} hpa`
-        this.humidity = `${data.main.humidity} %`
-        this.wind = `${data.wind.speed} m/h`
-        this.weatherDescription = `${data.weather[0].description}`
-        this.weatherIco = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-      })
+  methods: {
+    getWeather() {
+      // TODO: .env
+      const API_KEY = 'c09050b015aa45f0f162c94a16623214'
+      fetch(
+        `http://api.openweathermap.org/data/2.5/weather?id=706483&APPID=${API_KEY}&units=metric&lang=ru`
+      )
+        .then(r => r.json())
+        // .then(data => console.log(data));
+        .then(data => {
+          this.city = `${data.name}`
+          this.country = `${data.sys.country}`
+          this.temp = `${data.main.temp} °`
+          this.pressure = `${data.main.pressure} hpa`
+          this.humidity = `${data.main.humidity} %`
+          this.wind = `${data.wind.speed} m/h`
+          this.weatherDescription = `${data.weather[0].description}`
+          this.weatherIco = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+        })
+    }
+  },
+  mounted() {
+    this.getWeather()
   }
 }
 </script>
