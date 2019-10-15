@@ -7,7 +7,7 @@
         <Date />
       </div>
       <div class="info">
-        <Input v-model.trim="title" :title="title" />
+        <Input v-model="title" :title="title" />
         <Button name="change title" @btn-change="chengeTitle" />
       </div>
       <hr />

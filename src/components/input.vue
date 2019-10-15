@@ -1,17 +1,17 @@
 <template>
   <div class="input">
     <div class="div">
-      <input type="text" :placeholder="title" :title="title" @input="updateValue" />
+      <input type="text" placeholder="v-model" @input="updateValue" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['title'],
+  props: ['value'],
   methods: {
-    updateValue: function(title) {
-      this.$emit('input', title)
+    updateValue: function(value) {
+      this.$emit('input', event.target.value)
     }
   }
 }
