@@ -4,7 +4,7 @@
     <h4>router</h4>
     <div class="block">
       <div class="links">
-        <router-link to="/">Main</router-link>
+        <router-link exact to="/">Main</router-link>
         <router-link to="/foo">Foo</router-link>
         <router-link to="/bar">Bar</router-link>
       </div>
@@ -21,14 +21,14 @@ export default {
 }
 </script>
 <style lang="stylus">
-@import '../src/assets/styl/default.styl';
+  @import '../src/assets/styl/default.styl';
 
-.block
-  margin-top 60px
-  display flex
-  justify-content space-evenly
-  align-items center
-  flex-wrap wrap
+  .block
+    margin-top 60px
+    display flex
+    justify-content space-evenly
+    align-items center
+    flex-wrap wrap
 
  .links
     display flex
@@ -36,5 +36,12 @@ export default {
     align-items center
     width 100%
     max-width 300px
-
+    a
+      color #2c3e50
+      transition color .5s ease
+      &:hover
+        color #5f9ea0
+    .router-link-active
+      color #5f9ea0
+      font-weight bold
 </style>

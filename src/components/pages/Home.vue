@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <Loader v-if="loading" />
+  <div v-else>
     <h1>{{ title }}</h1>
     <div class="container">
       <hr />
@@ -23,7 +24,7 @@ import Date from '../../components/date'
 import Button from '../../components/button'
 import Input from '../../components/input'
 export default {
-  data: () => {
+  data() {
     return {
       title: 'Main'
     }
@@ -42,5 +43,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+
 </style>
