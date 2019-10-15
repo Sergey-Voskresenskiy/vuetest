@@ -13,7 +13,6 @@
         <Input v-model="title" :title="title" />
         <Button name="change title" @btn-change="chengeTitle" />
       </div>
-      <hr />
     </div>
   </div>
 </template>
