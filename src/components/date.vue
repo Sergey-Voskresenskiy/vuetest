@@ -1,6 +1,6 @@
 <template>
   <div class="date">
-    <h3 @click="updateDate" class="fullTime">{{ getFullTime }}</h3>
+    <h3 @click="updateDate" class="fullTime">{{ fullTime }}</h3>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     }
   },
   computed: {
-    getFullTime: {
+    fullTime: {
       get: function() {
         return `${this.time} - ${this.date}`
       },
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     updateDate(e) {
-      this.getFullTime = `${this.time} - ${this.date}`
+      this.fullTime = `${this.time} - ${this.date}`
     }
   }
 }

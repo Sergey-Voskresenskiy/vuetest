@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     change: function() {
-      this.$emit('change')
+      this.$emit('btn-change')
     }
   }
 }
