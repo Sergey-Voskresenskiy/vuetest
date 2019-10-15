@@ -1,53 +1,40 @@
 <template>
   <div id="app">
-    <h1>{{ title }}</h1>
-    <div class="container">
-      <div class="info">
-        <Weather />
-        <Date />
+    <hr />
+    <h4>router</h4>
+    <div class="block">
+      <div class="links">
+        <router-link to="/">Main</router-link>
+        <router-link to="/foo">Foo</router-link>
+        <router-link to="/bar">Bar</router-link>
       </div>
-      <div class="info">
-        <Input v-model="title" :title="title" />
-        <Button name="change title" @btn-change="chengeTitle" />
-      </div>
-      <hr />
     </div>
+    <hr />
+    <router-view></router-view>
+    <hr />
   </div>
 </template>
 
 <script>
-import Weather from './components/weather'
-import Date from './components/date'
-import Button from './components/button'
-import Input from './components/input'
-
 export default {
-  name: 'app',
-  data: () => {
-    return {
-      title: 'vue test'
-    }
-  },
-  components: {
-    Weather,
-    Date,
-    Button,
-    Input
-  },
-  methods: {
-    chengeTitle: function() {
-      this.title = 'btn $emit("change")'
-    }
-  }
+  name: 'app'
 }
 </script>
 <style lang="stylus">
 @import '../src/assets/styl/default.styl';
 
-.info
+.block
   margin-top 60px
   display flex
   justify-content space-evenly
   align-items center
   flex-wrap wrap
+
+ .links
+    display flex
+    justify-content space-around;
+    align-items center
+    width 100%
+    max-width 300px
+
 </style>
