@@ -7,7 +7,7 @@
         <Date />
       </div>
       <hr />
-
+      <!--  -->
       <div class="input">
         <div class="div">
           <input type="text" v-model.trim="input" placeholder="v-model" />
