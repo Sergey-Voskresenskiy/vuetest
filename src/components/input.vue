@@ -10,7 +10,7 @@
 export default {
   props: ['value'],
   methods: {
-    updateValue: function(value) {
+    updateValue(value) {
       this.$emit('input', event.target.value)
     }
   }

@@ -18,7 +18,7 @@ export default {
     }
   },
   methods: {
-    change: function() {
+    change() {
       this.$emit('btn-change')
     }
   }

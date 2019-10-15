@@ -7,18 +7,16 @@
 <script>
 export default {
   name: 'Date',
-  data: () => {
-    return {
-      time: `${new Date().toLocaleTimeString()}`,
-      date: `${new Date().toLocaleDateString()}`
-    }
-  },
+  data: () => ({
+    time: `${new Date().toLocaleTimeString()}`,
+    date: `${new Date().toLocaleDateString()}`
+  }),
   computed: {
     fullTime: {
-      get: function() {
+      get() {
         return `${this.time} - ${this.date}`
       },
-      set: function() {
+      set() {
         this.time = `${new Date().toLocaleTimeString()}`
         this.date = `${new Date().toLocaleDateString()}`
       }
