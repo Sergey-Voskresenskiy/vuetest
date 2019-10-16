@@ -75,10 +75,10 @@ export default {
   components: { QuizOne, QuizTwo, QuizThree, QuizFour },
   methods: {
     stepCounterUp() {
-      if (this.stepCounter > 3) {
+      if (this.stepCounter < 4) {
         this.stepCounter++
       } else {
-        this.stepCounter == 1
+        this.stepCounter = 1
       }
     }
   }
