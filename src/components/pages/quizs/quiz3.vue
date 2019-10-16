@@ -13,9 +13,9 @@
         <div class="quiz__question">{{ questions[2].question }}</div>
         <input type="text" class="quiz__input" :placeholder="questions[2].placeholder" />
         <div class="quiz__text">{{ questions[2].text }}</div>
-        <form class="quiz__buttons">
+        <div class="quiz__buttons">
           <button @click="counterUp()">{{ questions[2].buttons[0] }}</button>
-        </form>
+        </div>
       </div>
     </div>
   </div>

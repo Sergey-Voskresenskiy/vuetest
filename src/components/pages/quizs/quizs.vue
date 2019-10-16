@@ -1,28 +1,30 @@
 <template>
   <div style="margin-bottom: 60px;">
     <h5>{{title}}</h5>
-    <QuizOne
-      :step="step"
-      :stepCounter="stepCounter"
-      :questions="questions"
-      v-if="stepCounter == 1"
-      @btn-counter-up="stepCounterUp"
-    />
-    <QuizTwo
-      :step="step"
-      :stepCounter="stepCounter"
-      :questions="questions"
-      v-else-if="stepCounter == 2"
-      @btn-counter-up="stepCounterUp"
-    />
-    <QuizThree
-      :step="step"
-      :stepCounter="stepCounter"
-      :questions="questions"
-      v-else-if="stepCounter == 3"
-      @btn-counter-up="stepCounterUp"
-    />
-    <QuizFour v-else-if="stepCounter == 4" :thanks="thanks" @btn-counter-up="stepCounterUp" />
+    <transition name="fade" mode="out-in">
+      <QuizOne
+        :step="step"
+        :stepCounter="stepCounter"
+        :questions="questions"
+        v-if="stepCounter == 1"
+        @btn-counter-up="stepCounterUp"
+      />
+      <QuizTwo
+        :step="step"
+        :stepCounter="stepCounter"
+        :questions="questions"
+        v-else-if="stepCounter == 2"
+        @btn-counter-up="stepCounterUp"
+      />
+      <QuizThree
+        :step="step"
+        :stepCounter="stepCounter"
+        :questions="questions"
+        v-else-if="stepCounter == 3"
+        @btn-counter-up="stepCounterUp"
+      />
+      <QuizFour v-else-if="stepCounter == 4" :thanks="thanks" @btn-counter-up="stepCounterUp" />
+    </transition>
   </div>
 </template>
 

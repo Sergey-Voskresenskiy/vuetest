@@ -22,6 +22,13 @@ export default {
 <style lang="stylus">
   @import '../src/assets/styl/default.styl';
 
+  .fade-enter-active
+  .fade-leave-active
+    transition opacity .5s
+  .fade-enter
+  .fade-leave-to
+    opacity 0
+
   .block
     margin-top 60px
     display flex
