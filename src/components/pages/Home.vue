@@ -1,6 +1,5 @@
 <template>
-  <Loader v-if="loading" />
-  <div v-else>
+  <div>
     <h1>{{ title }}</h1>
     <div class="container">
       <hr />

@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <hr />
-    <h4>router</h4>
-    <div class="block">
+    <nav>
+      <router-link exact to="/" class="logo">Vue Test</router-link>
       <div class="links">
         <router-link exact to="/">Main</router-link>
-        <router-link to="/foo">Foo</router-link>
+        <router-link to="/quizs">Quiz</router-link>
         <router-link to="/bar">Bar</router-link>
       </div>
+    </nav>
+    <div class="container">
+      <router-view></router-view>
     </div>
-    <hr />
-    <router-view></router-view>
-    <hr />
   </div>
 </template>
 
@@ -30,6 +29,19 @@ export default {
     align-items center
     flex-wrap wrap
 
+  nav
+    display flex
+    justify-content space-between
+    align-items center
+    padding 20px
+  .logo
+    font-size 24px
+    font-weight 900
+    letter-spacing 4px
+    color #2c3e50
+    transition all .5s ease
+    &:hover
+      color #5f9ea0
  .links
     display flex
     justify-content space-around;

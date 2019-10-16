@@ -13,9 +13,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/foo',
-      name: 'foo',
-      component: () => import('@/components/pages/foo.vue')
+      path: '/quizs',
+      name: 'quizs',
+      component: () => import('@/components/pages/quizs/quizs.vue')
     },
     {
       path: '/bar',
