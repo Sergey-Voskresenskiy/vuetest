@@ -5,10 +5,7 @@
     <transition name="fade" mode="out-in">
       <div class="quizVuex">
         <div class="quizVuex__photo">
-          <img
-            src="https://img.tsn.ua/cached/1518092914/tsn-e596772b039de3f9cc99cecfb6e26c38/thumbs/1200x630/87/85/0cb1fb6d7d9aa9460e02fc0322578587.jpg"
-            alt="quizVuex_img"
-          />
+          <img :src="quizContent[0].quiz1.image" alt="quizVuex_img" />
         </div>
         <div class="quizVuex__content">
           <div class="quizVuex__top">
@@ -20,11 +17,11 @@
           </div>
 
           <div class="quizVuex__bottom">
-            <div class="quizVuex__question">question</div>
-            <div class="quizVuex__text">text</div>
+            <div class="quizVuex__question">{{quizContent[0].quiz1.question}}</div>
+            <div class="quizVuex__text">{{quizContent[0].quiz1.text}}</div>
             <div class="quizVuex__buttons">
-              <button>buttons1</button>
-              <button>buttons2</button>
+              <button>{{quizContent[0].quiz1.buttons[0]}}</button>
+              <button>{{quizContent[0].quiz1.buttons[1]}}</button>
             </div>
           </div>
         </div>
@@ -34,14 +31,22 @@
 </template>
 
 <script>
+import quizJSON from './../../../quiz.json'
+
 export default {
   name: 'quizsVuex',
+  created() {
+    this.$store.dispatch('loadQuizs', quizJSON)
+  },
   computed: {
+    quizContent() {
+      return this.$store.getters.getQuizs
+    },
     stepConter() {
-      return this.$store.state.stepConter
+      return this.$store.getters.getStepConter
     },
     stepQuantity() {
-      return this.$store.state.stepQuantity
+      return this.$store.getters.getStepQuantity
     }
   }
 }
