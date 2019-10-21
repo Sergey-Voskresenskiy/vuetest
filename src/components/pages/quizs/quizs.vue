@@ -34,7 +34,7 @@ import QuizTwo from './quiz2'
 import QuizThree from './quiz3'
 import QuizFour from './quiz4'
 export default {
-  name: 'quiz',
+  name: 'quizs',
   data: () => {
     return {
       title: 'совсем чуть чуть вопросов!',

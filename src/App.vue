@@ -5,6 +5,7 @@
       <div class="links">
         <router-link exact to="/">Main</router-link>
         <router-link to="/quizs">Quiz</router-link>
+        <router-link to="/quizs_vuex">QuizVuex</router-link>
         <router-link to="/bar">Bar</router-link>
       </div>
     </nav>

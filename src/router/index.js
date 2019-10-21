@@ -18,6 +18,11 @@ export default new Router({
       component: () => import('@/components/pages/quizs/quizs.vue')
     },
     {
+      path: '/quizs_vuex',
+      name: 'quizsVuex',
+      component: () => import('@/components/pages/quizsVuex/quizsVuex.vue')
+    },
+    {
       path: '/bar',
       name: 'bar',
       component: () => import('@/components/pages/bar.vue')

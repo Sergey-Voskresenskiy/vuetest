@@ -41,6 +41,8 @@ export default {
     display flex
     justify-content center
     align-items stretch
+    overflow hidden
+    border-radius 6px
     border 1px solid rgba(#5f9ea0, .05)
     border-bottom none
     box-shadow 0 10px 10px rgba(#5f9ea0, .25)
