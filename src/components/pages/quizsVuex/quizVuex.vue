@@ -1,21 +1,62 @@
 <template>
-  <div style="margin-bottom: 60px;">
-    <h5>quizs_Vuex</h5>
+  <div class="quizVuex">
+    <div class="quizVuex__photo">
+      <img :src="quizContent[0].quiz1.image" alt="quizVuex_img" />
+    </div>
+    <div class="quizVuex__content">
+      <div class="quizVuex__top">
+        <div class="quizVuex__title">Шаг {{ stepConter }}</div>
+        <div class="quizVuex__question-counter">
+          <div class="step">{{ stepConter }}</div>/
+          <div class="quality">{{ stepQuantity }}</div>
+        </div>
+      </div>
 
-    <transition name="fade" mode="out-in">
-      <quizVuex />
-    </transition>
+      <div class="quizVuex__bottom">
+        <div class="quizVuex__question">{{quizContent[0].quiz1.question}}</div>
+        <div class="quizVuex__text">{{quizContent[0].quiz1.text}}</div>
+        <div class="quizVuex__buttons">
+          <button>{{quizContent[0].quiz1.buttons[0]}}</button>
+          <button>{{quizContent[0].quiz1.buttons[1]}}</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import quizVuex from './quizVuex'
+import quizJSON from './../../../quiz.json'
+
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'quizsVuex',
-  components: {
-    quizVuex
+  name: 'quizVuex',
+  created() {
+    // this.$store.dispatch('loadQuizs', quizJSON)
+    this.loadQuizs(quizJSON)
+  },
+  methods: {
+    ...mapActions(['loadQuizs'])
+  },
+  computed: {
+    ...mapGetters({
+      quizContent: 'getQuizs',
+      stepConter: 'getStepConter',
+      stepQuantity: 'getStepQuantity'
+    })
   }
+
+  // computed: {
+  //   quizContent() {
+  //     return this.$store.getters.getQuizs
+  //   },
+  //   stepConter() {
+  //     return this.$store.getters.getStepConter
+  //   },
+  //   stepQuantity() {
+  //     return this.$store.getters.getStepQuantity
+  //   }
+  // }
 }
 </script>
 
