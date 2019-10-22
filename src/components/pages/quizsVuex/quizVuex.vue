@@ -1,7 +1,7 @@
 <template>
   <div class="quizVuex">
     <div class="quizVuex__photo">
-      <img :src="quizContent[0].quiz1.image" alt="quizVuex_img" />
+      <img :src="quiz.image" alt="quizVuex_img" />
     </div>
     <div class="quizVuex__content">
       <div class="quizVuex__top">
@@ -13,11 +13,10 @@
       </div>
 
       <div class="quizVuex__bottom">
-        <div class="quizVuex__question">{{quizContent[0].quiz1.question}}</div>
-        <div class="quizVuex__text">{{quizContent[0].quiz1.text}}</div>
+        <div class="quizVuex__question">{{quiz.question}}</div>
+        <div class="quizVuex__text">{{quiz.text}}</div>
         <div class="quizVuex__buttons">
-          <button>{{quizContent[0].quiz1.buttons[0]}}</button>
-          <button>{{quizContent[0].quiz1.buttons[1]}}</button>
+          <button v-for="(btn, index) in quiz.buttons" :key="index">{{btn}}</button>
         </div>
       </div>
     </div>
@@ -25,38 +24,16 @@
 </template>
 
 <script>
-import quizJSON from './../../../quiz.json'
-
-import { mapGetters, mapActions } from 'vuex'
-
+import { mapGetters } from 'vuex'
 export default {
   name: 'quizVuex',
-  created() {
-    // this.$store.dispatch('loadQuizs', quizJSON)
-    this.loadQuizs(quizJSON)
-  },
-  methods: {
-    ...mapActions(['loadQuizs'])
-  },
+  props: ['quiz'],
   computed: {
     ...mapGetters({
-      quizContent: 'getQuizs',
       stepConter: 'getStepConter',
       stepQuantity: 'getStepQuantity'
     })
   }
-
-  // computed: {
-  //   quizContent() {
-  //     return this.$store.getters.getQuizs
-  //   },
-  //   stepConter() {
-  //     return this.$store.getters.getStepConter
-  //   },
-  //   stepQuantity() {
-  //     return this.$store.getters.getStepQuantity
-  //   }
-  // }
 }
 </script>
 

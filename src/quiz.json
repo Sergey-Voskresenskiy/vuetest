@@ -1,10 +1,14 @@
 [
   {
-    "quiz1": {
-      "image": "https://img.tsn.ua/cached/1518092914/tsn-e596772b039de3f9cc99cecfb6e26c38/thumbs/1200x630/87/85/0cb1fb6d7d9aa9460e02fc0322578587.jpg",
-      "question": "Что двигается?",
-      "text": "Земля под ногами или небо над головой?",
-      "buttons": ["Земля", "Небо"]
-    }
+    "image": "https://img.tsn.ua/cached/1518092914/tsn-e596772b039de3f9cc99cecfb6e26c38/thumbs/1200x630/87/85/0cb1fb6d7d9aa9460e02fc0322578587.jpg",
+    "question": "Что двигается?",
+    "text": "Земля под ногами или небо над головой?",
+    "buttons": ["Земля", "Небо"]
+  },
+  {
+    "image": "https://img.tsn.ua/cached/1518092914/tsn-e596772b039de3f9cc99cecfb6e26c38/thumbs/1200x630/87/85/0cb1fb6d7d9aa9460e02fc0322578587.jpg",
+    "question": "Что на картинке?",
+    "text": "Земля под ногами или небо над головой?",
+    "buttons": ["Земля", "Небо"]
   }
 ]

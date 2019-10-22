@@ -1,21 +1,51 @@
 <template>
   <div style="margin-bottom: 60px;">
     <h5>quizs_Vuex</h5>
-
+    <!-- // -->
     <transition name="fade" mode="out-in">
-      <quizVuex />
+      <quizVuex :quiz="quizContent[0]" v-if="stepConter == 1" />
+      <quizVuex :quiz="quizContent[1]" v-else-if="stepConter ==2" />
+      <quizVuex :quiz="quizContent[2]" v-else />
     </transition>
   </div>
 </template>
 
 <script>
 import quizVuex from './quizVuex'
+import quizJSON from './../../../quiz.json'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'quizsVuex',
   components: {
     quizVuex
+  },
+  computed: {
+    ...mapGetters({
+      quizContent: 'getQuizs',
+      stepConter: 'getStepConter',
+      stepQuantity: 'getStepQuantity'
+    })
+  },
+  created() {
+    // this.$store.dispatch('loadQuizs', quizJSON)
+    this.loadQuizs(quizJSON)
+  },
+  methods: {
+    ...mapActions(['loadQuizs'])
   }
+
+  // computed: {
+  //   quizContent() {
+  //     return this.$store.getters.getQuizs
+  //   },
+  //   stepConter() {
+  //     return this.$store.getters.getStepConter
+  //   },
+  //   stepQuantity() {
+  //     return this.$store.getters.getStepQuantity
+  //   }
+  // }
 }
 </script>
 
