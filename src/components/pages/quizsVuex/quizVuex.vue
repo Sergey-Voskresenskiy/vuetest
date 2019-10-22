@@ -11,7 +11,6 @@
           <div class="quality">{{ stepQuantity }}</div>
         </div>
       </div>
-
       <div class="quizVuex__bottom">
         <div class="quizVuex__question">{{quiz.question}}</div>
         <div class="quizVuex__text">{{quiz.text}}</div>
